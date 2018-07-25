@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+  <head>
+  </head>
+
+    <body>
+      <div id="div1">
+        <p id="1706020110">田壮壮/1706020110/通信工程</p>
+        <p id="1706020112">王震/1706020112/通信工程</p>
+        <p>id：  <input type="text" id="test1" value="1706020110"></p>
+        <p>内容： <input type="text" id="test2" ></p>
+      </div>
+      <button id="btn1" onclick="del()">删除</button>
+      <button id="btn2" onclick="search()">查询</button>
+      <button id="btn3" onclick="change()">修改</button>
+      <button id="btn4" onclick="add()">增加</button>
+      <script src="/jquery/jquery-1.11.1.min.js">
+      </script>
+      <script>
+        function del() {
+            var ipt = document.getElementById("test1").value;
+            console.log(ipt);    
+            var parent=document.getElementById("div1");
+            var child=document.getElementById(ipt);
+            parent.removeChild(child);
+              }//删除
+        function search() {
+            var ipt = document.getElementById("test1").value;
+            console.log(ipt);
+            var x=document.getElementById(ipt);    
+            alert(x.innerHTML)
+              }//查询
+        function change() {
+            var ipt1 = document.getElementById("test1").value;
+            console.log(ipt1);
+            var ipt2 = document.getElementById("test2").value;
+            console.log(ipt2);
+            document.getElementById(ipt1).innerHTML=ipt2;
+              }//修改
+        function add() {
+            var ipt1 = document.getElementById("test1").value;
+            console.log(ipt1);
+            var ipt2 = document.getElementById("test2").value;
+            console.log(ipt2);
+            var para=document.createElement("p")
+            var node=document.createTextNode(ipt2);
+            para.appendChild(node);
+            var element=document.getElementById("div1");
+            element.appendChild(para);
+              }//增加       
+      </script>
+    </body>
+</html>
