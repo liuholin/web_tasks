@@ -1,0 +1,141 @@
+<!doctype html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>¾²Ì¬µÇÂ¼2.0</title>
+    </head>
+      <style>	
+	@charset "UTF-8";
+        *, *:before, *:after {
+          box-sizing: border-box;
+        }
+
+        #container {
+          counter-reset: counterA;
+        }
+        div.row {
+          position: relative;
+            width: 100%;
+            height: 20vw;
+            padding-left: 15vw;
+            counter-increment: counterA;
+        }
+        div.row:before {
+          content: counter(counterA);
+          color: rgba(255, 255, 255, 0.05);
+          font-size: 10vw;
+          position: absolute;
+          left: 0px;
+        }
+        div.row label {
+        position: relative;
+        display: block;
+        float: left;
+        margin: 8vw 2vw;
+        }
+        div.row label input {
+          width: 160px;
+          height: 30px;
+          line-height: 30px;
+          background: rgba(255, 255, 255, 0.1);
+          border: none;
+          outline: none;
+          border: 1px solid #fff;
+          color: #377D6A;
+          padding: 4px 10px;
+          border-radius: 4px;
+          text-indent: 38px;
+          transition: all .3s ease-in-out;
+        }
+        div.row label input ::-webkit-input-placeholder {
+          color: transparent;
+        }
+        div.row label input + span {
+          position: absolute;
+          left: 0;
+          top: 0;
+          color: #fff;
+          background: #7AB893;
+          display: inline-block;
+          padding: 7px 4px;
+          transform-origin: left center;
+          transform: perspective(300px);
+          transition: all .3s ease-in-out;
+          border-radius: 4px 0 0 4px;
+        }
+        div.row label input:focus,
+        div.row label input:active {
+          text-indent: 0;
+          background: rgba(255, 255, 255, 0.2);
+        }
+        div.row label input:focus ::-webkit-input-placeholder,
+        div.row label input:active ::-webkit-input-placeholder {
+          color: #f00;
+        }
+        div.row label input:focus + span,
+        div.row label input:active + span {
+          background: #478560;
+        }
+        div.row input + span {
+          background:transparent;
+        }
+        div.row input:focus,
+        div.row input:active {
+          background-color: #137884;
+          background-size: 13px, 29px, 37px, 53px;
+          animation-play-state: paused;
+        }
+        div.row input:focus + span,
+        div.row input:active + span {
+          transform: translateY(-100%) scale(0.8);
+          background: transparent;
+          color: #137884;
+        }
+        @keyframes shadowGo {
+          0% {
+            background-position: 0 0;
+          }
+          100% {
+            background-position: -600% 0%;
+          }		
+      </style>
+
+      <body>
+	<br><br><br>   
+        <fieldset style="width:200px; margin:auto;border: thin;background-color:aqua">
+	  <td style="text-align:center">
+	<table width="300px" height="400">
+          <form method ="POST"  name="frmLogin">
+	    <tr>
+	      <td style="height: 40px"></td></tr>
+            <tr>
+              <td style="height: 5px">
+	  <div class='row' style="width: 70%;float:">
+                  <label style="float: right">
+	            <input type="text" name="username" value="Your name" size="20" maxlength="20" ><span>ÐÕÃû</span></label></td>
+           </tr>
+           <tr>
+             <td style="height: 5px">
+	        <div class="row" style="width: 70%;float: left">
+	          <label style="float: right"> 
+		     <input type="password" name="password" value="Your password" id="pwd" size="20" maxlength="20" ><span>ÃÜÂë</span>
+		  </label>
+	  </div>
+	     </td>
+	       </tr>
+               <tr>
+	  <div>
+            <td nowrap="nowrap" style="width: 50%;height: 1px;float: "><div style="width=50%;float: left"><input type="checkbox" name="zlogin" value="1">¼Ç×¡ÃÜÂë</div><div style="width: 50%;float: right"><a href="https://www.bilibili.com">Íü¼ÇÃÜÂë<a></div>
+          </div>
+              </tr>
+          </form>
+        </table> 
+        <table>
+          <tr>
+	   <td></td>
+           <td width="180px"><input type="submit" name="login" value="µÇÂ¼" ></td>
+           <td><input type="button" name="button" value="×¢²á" "></td>
+          </tr>
+        </fieldset>
+</body>
+</html>
